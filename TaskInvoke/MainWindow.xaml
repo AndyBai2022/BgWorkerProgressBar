@@ -1,0 +1,42 @@
+﻿<Window x:Class="TaskInvoke.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskInvoke"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="120"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Task" HorizontalAlignment="Center" Grid.Column="1" FontSize="20"/>
+        <TextBlock Text="Folder:" HorizontalAlignment="Right" Grid.Row="1" FontSize="17" VerticalAlignment="Center"/>
+        <TextBox Width="460" Grid.Column="1" Grid.Row="1" Height="38" Name="folderPath" VerticalContentAlignment="Center"/>
+        <Button Name="btnFolder" Grid.Column="2" Grid.Row="1" Content="Browse" FontSize="17" Width="76" Height="42" Click="btnFolder_Click"/>
+
+        <TextBlock Name="statusInfo" Grid.Row="2" Grid.Column="1" Text="processing..." VerticalAlignment="Center"/>
+
+        <Button Name="btnCreatFiles" Grid.Column="2" Grid.Row="2" Content="Creat" FontSize="17" Width="76" Height="42" Click="btnCreate_Click"/>
+
+        <StackPanel Grid.Row="3" Grid.Column="1" >
+            <TextBlock Name="txtPercentage" Text="0%" Foreground="blue" HorizontalAlignment="Center"/>
+            <ProgressBar BorderBrush="Aqua" BorderThickness="4" Name="progressBar" Height="32" Width="360"/>
+           
+        </StackPanel>
+    </Grid>
+</Window>
